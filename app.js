@@ -5,8 +5,8 @@
   com os dados do seu projeto Supabase.
 */
 
-const SUPABASE_URL = "COLE_A_URL_DO_PROJETO";
-const SUPABASE_ANON_KEY = "COLE_A_CHAVE_PUBLICA";
+const SUPABASE_URL = "https://xtsporrgjlmoihvybqdi.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_yxbxKh_eH7Z02ZN3HFsnQA_k2po033b";
 
 let db = null;
 let currentUser = null;
