@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>7K.SOCIAL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Página inicial">7K<span>.SOCIAL</span></a>
+    <button id="logoutBtn" class="btn-outline hidden">SAIR</button>
+  </header>
+
+  <main>
+    <section id="authScreen" class="auth-card">
+      <p class="eyebrow">SUA REDE. SUA IDENTIDADE.</p>
+      <h1>Entre para o <span>7K.SOCIAL</span></h1>
+      <p class="muted">Conecte-se com sua comunidade.</p>
+
+      <form id="authForm">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" autocomplete="email"
+          placeholder="seu@email.com" required>
+
+        <label for="password">Senha</label>
+        <input id="password" type="password"
+          autocomplete="current-password"
+          minlength="6" placeholder="Mínimo de 6 caracteres" required>
+
+        <label for="displayName">Nome de exibição (para cadastro)</label>
+        <input id="displayName" type="text" maxlength="40"
+          placeholder="Seu nome">
+
+        <button id="loginBtn" class="btn-gold" type="submit">
+          ENTRAR
+        </button>
+        <button id="registerBtn" class="btn-outline" type="button">
+          CRIAR CONTA
+        </button>
+      </form>
+      <p id="authMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="appScreen" class="hidden">
+      <section class="welcome-card">
+        <p class="eyebrow">BEM-VINDO AO 7K</p>
+        <h1>Olá, <span id="welcomeName">Usuário</span>!</h1>
+        <p class="muted">Sua comunidade começa aqui.</p>
+      </section>
+
+      <nav class="nav-tabs" aria-label="Navegação principal">
+        <button class="nav-btn active" data-page="feed">Início</button>
+        <button class="nav-btn" data-page="profile">Perfil</button>
+        <button class="nav-btn" data-page="stories">Stories</button>
+        <button class="nav-btn" data-page="messages">Mensagens</button>
+      </nav>
+
+      <section id="feedPage" class="page">
+        <article class="panel">
+          <h2>Nova publicação</h2>
+          <form id="postForm">
+            <textarea id="postText" maxlength="1000"
+              placeholder="O que você está pensando?"
+              required></textarea>
+            <button class="btn-gold" type="submit">PUBLICAR</button>
+          </form>
+          <p id="postMessage" class="message" role="status"></p>
+        </article>
+        <h2 class="section-title">SEU FEED</h2>
+        <div id="feedList" class="feed-list">
+          <p class="muted">Carregando publicações...</p>
+        </div>
+      </section>
+
+      <section id="profilePage" class="page hidden">
+        <article class="panel">
+          <h2>Meu perfil</h2>
+          <div class="avatar" id="avatar">7K</div>
+          <p id="profileEmail" class="muted"></p>
+          <form id="profileForm">
+            <label for="profileName">Nome de exibição</label>
+            <input id="profileName" maxlength="40" required>
+            <label for="profileBio">Biografia</label>
+            <textarea id="profileBio" maxlength="160"
+              placeholder="Conte um pouco sobre você"></textarea>
+            <button class="btn-gold" type="submit">
+              SALVAR PERFIL
+            </button>
+          </form>
+          <p id="profileMessage" class="message" role="status"></p>
+        </article>
+      </section>
+
+      <section id="storiesPage" class="page hidden">
+        <article class="panel">
+          <h2>Stories</h2>
+          <p class="muted">A área de Stories será ativada na próxima etapa.</p>
+        </article>
+      </section>
+
+      <section id="messagesPage" class="page hidden">
+        <article class="panel">
+          <h2>Mensagens</h2>
+          <p class="muted">As conversas privadas serão ativadas em uma etapa posterior.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer>© 2026 7K.SOCIAL · FEITO PARA CONECTAR</footer>
+</body>
+</html>
