@@ -1,152 +1,267 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="7K.SOCIAL — sua comunidade, sua identidade.">
-  <title>7K.SOCIAL</title>
-  <link rel="stylesheet" href="./style.css?v=3">
-  
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="7K.SOCIAL — comunidade gamer, clipes, jogadores e guildas.">
+  <title>7K.SOCIAL — Comunidade Gamer</title>
+  <link rel="stylesheet" href="./style.css?v=4">
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=3" defer></script>
+  <script src="./app.js?v=3" defer></script>
 </head>
 <body>
+
   <header class="topbar">
-    <a class="logo" href="#" aria-label="7K.SOCIAL início"><span class="logo-mark">7K</span><span class="logo-word">.SOCIAL</span></a>
+    <a class="logo" href="#" aria-label="7K.SOCIAL início">
+      <span class="logo-mark">7K</span>
+      <span class="logo-word">.SOCIAL</span>
+    </a>
     <div class="top-actions">
-      <span class="online-dot" aria-label="Comunidade online"></span>
+      <span class="online-dot" aria-label="Comunidade"></span>
       <button id="logoutBtn" class="btn-outline hidden" type="button">SAIR ↗</button>
     </div>
   </header>
 
   <main>
+
+    <!-- LOGIN E CADASTRO -->
     <section id="authScreen" class="auth-card">
       <div class="auth-emblem">7K</div>
-      <p class="eyebrow">SUA REDE. SUA IDENTIDADE.</p>
-      <h1>Entre para o<br><span>7K.SOCIAL</span></h1>
-      <p class="muted">Conecte-se com sua comunidade.</p>
+      <p class="eyebrow">A NOVA ERA GAMER</p>
+      <h1>SUA TROPA.<br><span>SUA COMUNIDADE.</span></h1>
+      <p class="muted">Conecte-se com jogadores, compartilhe suas jogadas e encontre sua guilda.</p>
+
       <form id="authForm">
         <label for="email">E-mail</label>
-        <input id="email" type="email" autocomplete="email" placeholder="seu@email.com" required>
+        <input id="email" type="email" autocomplete="email"
+          placeholder="seu@email.com" required>
+
         <label for="password">Senha</label>
-        <input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="Mínimo de 6 caracteres" required>
-        <label for="displayName">Nome de exibição <span class="optional">(para cadastro)</span></label>
-        <input id="displayName" type="text" maxlength="40" placeholder="Como quer ser chamado?">
-        <button id="loginBtn" class="btn-gold" type="submit">ENTRAR NA COMUNIDADE <span>→</span></button>
-        <button id="registerBtn" class="btn-outline" type="button">CRIAR MINHA CONTA</button>
+        <input id="password" type="password" autocomplete="current-password"
+          minlength="6" placeholder="Mínimo de 6 caracteres" required>
+
+        <label for="displayName">Nick ou nome de exibição</label>
+        <input id="displayName" type="text" maxlength="40"
+          placeholder="Seu nick gamer">
+
+        <button id="loginBtn" class="btn-gold" type="submit">
+          ENTRAR NA PLATAFORMA →
+        </button>
+
+        <button id="registerBtn" class="btn-outline" type="button">
+          CRIAR MINHA CONTA
+        </button>
       </form>
+
       <p id="authMessage" class="message" role="status"></p>
-      <p class="auth-foot">EXCLUSIVO. AUTÊNTICO. 7K.</p>
+      <p class="auth-foot">SUA JOGADA. SUA HISTÓRIA. 7K.</p>
     </section>
 
+    <!-- PLATAFORMA -->
     <section id="appScreen" class="hidden">
+
       <section class="welcome-card">
         <div class="welcome-copy">
-          <p class="eyebrow">BEM-VINDO À COMUNIDADE</p>
-          <h1>Olá, <span id="welcomeName">Usuário</span><span class="wave">.</span></h1>
-          <p class="muted">Sua próxima conexão começa aqui.</p>
+          <p class="eyebrow">BEM-VINDO À 7K ARENA</p>
+          <h1>Salve, <span id="welcomeName">Jogador</span><span class="wave">!</span></h1>
+          <p class="muted">Mostre suas jogadas e encontre sua próxima tropa.</p>
         </div>
-        <div class="welcome-badge" aria-hidden="true">7K<span>✦</span></div>
+        <div class="welcome-badge" aria-label="7K Gamer">
+          7K<span>✦</span>
+        </div>
       </section>
 
-      <section class="stories-strip" aria-label="Stories">
-        <div class="strip-heading"><h2>STORIES</h2><span>EM BREVE</span></div>
+      <!-- STORIES -->
+      <section class="stories-strip" aria-label="Stories dos jogadores">
+        <div class="strip-heading">
+          <h2>STORIES DA TROPA</h2>
+          <span>ÁREA GAMER</span>
+        </div>
+
         <div class="story-row">
           <div class="story-item">
             <div class="story-ring add-story"><span>＋</span></div>
             <span>Seu story</span>
           </div>
           <div class="story-item">
-            <div class="story-ring story-placeholder"><span>7K</span></div>
-            <span>Comunidade</span>
+            <div class="story-ring story-placeholder"><span>🔥</span></div>
+            <span>Gameplay</span>
           </div>
           <div class="story-item">
-            <div class="story-ring story-placeholder ring-2"><span>✦</span></div>
+            <div class="story-ring story-placeholder ring-2"><span>🏆</span></div>
+            <span>Ranked</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring story-placeholder ring-3"><span>🎯</span></div>
             <span>Destaques</span>
-          </div>
-          <div class="story-item">
-            <div class="story-ring story-placeholder ring-3"><span>★</span></div>
-            <span>Novidades</span>
           </div>
         </div>
       </section>
 
+      <!-- MENU -->
       <nav class="nav-tabs" aria-label="Navegação principal">
-        <button class="nav-btn active" data-page="feed" type="button"><span class="nav-icon">⌂</span><span>Início</span></button>
-        <button class="nav-btn" data-page="stories" type="button"><span class="nav-icon">◉</span><span>Stories</span></button>
-        <button class="nav-btn" data-page="messages" type="button"><span class="nav-icon">✉</span><span>Mensagens</span></button>
-        <button class="nav-btn" data-page="profile" type="button"><span class="nav-icon">♙</span><span>Perfil</span></button>
+        <button class="nav-btn active" data-page="feed" type="button">
+          <span class="nav-icon">⌂</span>
+          <span>Início</span>
+        </button>
+        <button class="nav-btn" data-page="stories" type="button">
+          <span class="nav-icon">◉</span>
+          <span>Clipes</span>
+        </button>
+        <button class="nav-btn" data-page="messages" type="button">
+          <span class="nav-icon">✉</span>
+          <span>Mensagens</span>
+        </button>
+        <button class="nav-btn" data-page="profile" type="button">
+          <span class="nav-icon">♙</span>
+          <span>Perfil</span>
+        </button>
       </nav>
 
+      <!-- FEED -->
       <section id="feedPage" class="page">
+
         <div class="section-heading">
-          <div><p class="eyebrow">EXPLORE O QUE IMPORTA</p><h2>Seu feed<span>.</span></h2></div>
-          <span class="live-label"><i></i> COMUNIDADE</span>
+          <div>
+            <p class="eyebrow">A COMUNIDADE EM AÇÃO</p>
+            <h2>Feed gamer<span>.</span></h2>
+          </div>
+          <span class="live-label"><i></i> 7K ARENA</span>
         </div>
 
         <article class="panel composer">
           <div class="composer-top">
             <div class="mini-avatar">7K</div>
-            <div><h3>Compartilhe sua ideia</h3><p class="muted">O que está acontecendo com você?</p></div>
+            <div>
+              <h3>Compartilhe sua jogada</h3>
+              <p class="muted">Dicas, partidas, vitórias e desafios.</p>
+            </div>
           </div>
+
           <form id="postForm">
-            <textarea id="postText" maxlength="1000" placeholder="Escreva algo para sua comunidade..." required></textarea>
+            <textarea id="postText" maxlength="1000"
+              placeholder="Qual foi sua melhor jogada hoje?"
+              required></textarea>
+
             <div class="composer-bottom">
-              <span class="composer-note">✦ Sua voz tem espaço aqui</span>
-              <button class="btn-gold publish-btn" type="submit"><span>PUBLICAR</span><span>↑</span></button>
+              <span class="composer-note">✦ Respeite a comunidade</span>
+              <button class="btn-gold publish-btn" type="submit">
+                <span>PUBLICAR</span><span>↑</span>
+              </button>
             </div>
           </form>
           <p id="postMessage" class="message" role="status"></p>
         </article>
 
-        <div class="feed-title-row"><h2>ÚLTIMAS PUBLICAÇÕES</h2><span class="gold-line"></span></div>
+        <div class="feed-title-row">
+          <h2>PUBLICAÇÕES DOS JOGADORES</h2>
+          <span class="gold-line"></span>
+        </div>
+
         <div id="feedList" class="feed-list">
-          <div class="empty-state"><span class="empty-icon">✦</span><p class="muted">Carregando publicações...</p></div>
+          <div class="empty-state">
+            <span class="empty-icon">✦</span>
+            <p class="muted">Carregando publicações da comunidade...</p>
+          </div>
         </div>
       </section>
 
+      <!-- PERFIL -->
       <section id="profilePage" class="page hidden">
         <article class="panel profile-panel">
-          <div class="profile-cover"><span>7K.SOCIAL</span><span class="cover-star">✦</span></div>
+
+          <div class="profile-cover">
+            <span>7K GAMER PROFILE</span>
+            <span class="cover-star">✦</span>
+          </div>
+
           <div class="profile-main">
             <div class="avatar" id="avatar">7K</div>
-            <p class="profile-tag">MEMBRO 7K</p>
+            <p class="profile-tag">JOGADOR DA COMUNIDADE</p>
             <h2>Meu perfil<span>.</span></h2>
             <p id="profileEmail" class="muted"></p>
-            <div class="profile-stats"><div><strong>—</strong><span>Publicações</span></div><div><strong>—</strong><span>Seguidores</span></div><div><strong>—</strong><span>Seguindo</span></div></div>
+
+            <div class="profile-stats">
+              <div><strong>—</strong><span>Publicações</span></div>
+              <div><strong>—</strong><span>Seguidores</span></div>
+              <div><strong>—</strong><span>Seguindo</span></div>
+            </div>
+
             <form id="profileForm">
-              <label for="profileName">Nome de exibição</label>
-              <input id="profileName" maxlength="40" required>
-              <label for="profileBio">Biografia</label>
-              <textarea id="profileBio" maxlength="160" placeholder="Conte um pouco sobre você"></textarea>
-              <button class="btn-gold" type="submit">SALVAR PERFIL <span>✓</span></button>
+              <label for="profileName">Nick ou nome de exibição</label>
+              <input id="profileName" maxlength="40" required
+                placeholder="Seu nick gamer">
+
+              <label for="profileBio">Bio gamer</label>
+              <textarea id="profileBio" maxlength="160"
+                placeholder="Sua guilda, seu estilo de jogo e sua apresentação..."></textarea>
+
+              <button class="btn-gold" type="submit">
+                SALVAR PERFIL ✓
+              </button>
             </form>
+
             <p id="profileMessage" class="message" role="status"></p>
           </div>
         </article>
       </section>
 
+      <!-- CLIPES -->
       <section id="storiesPage" class="page hidden">
         <article class="panel feature-panel">
-          <div class="feature-icon">◉</div><p class="eyebrow">MOMENTOS EM TEMPO REAL</p>
-          <h2>Stories<span>.</span></h2>
-          <p class="muted">A área visual está preparada. A publicação e visualização de stories será ligada ao Supabase na próxima etapa.</p>
-          <div class="feature-status"><i></i> PRÓXIMA ETAPA</div>
+          <div class="feature-icon">▶</div>
+          <p class="eyebrow">SUAS MELHORES JOGADAS</p>
+          <h2>Clipes gamer<span>.</span></h2>
+          <p class="muted">
+            Um espaço para compartilhar highlights, jogadas,
+            dicas e momentos das suas partidas.
+          </p>
+          <div class="feature-status">
+            <i></i> PUBLICAÇÃO DE VÍDEOS EM DESENVOLVIMENTO
+          </div>
+        </article>
+
+        <article class="panel feature-panel">
+          <div class="feature-icon">🏆</div>
+          <p class="eyebrow">JOGUE EM EQUIPE</p>
+          <h2>Guildas e squads<span>.</span></h2>
+          <p class="muted">
+            A próxima etapa será criar áreas para divulgar guildas,
+            encontrar parceiros e recrutar jogadores.
+          </p>
+          <div class="feature-status">
+            <i></i> EM DESENVOLVIMENTO
+          </div>
         </article>
       </section>
 
+      <!-- MENSAGENS -->
       <section id="messagesPage" class="page hidden">
         <article class="panel feature-panel">
-          <div class="feature-icon">✉</div><p class="eyebrow">CONVERSAS PRIVADAS</p>
+          <div class="feature-icon">✉</div>
+          <p class="eyebrow">CONECTE-SE COM A TROPA</p>
           <h2>Mensagens<span>.</span></h2>
-          <p class="muted">A interface está preparada. Vamos conectar as conversas privadas com segurança na próxima etapa.</p>
-          <div class="feature-status"><i></i> PRÓXIMA ETAPA</div>
+          <p class="muted">
+            A área de conversas será conectada ao banco de dados
+            na próxima etapa.
+          </p>
+          <div class="feature-status">
+            <i></i> MENSAGENS EM DESENVOLVIMENTO
+          </div>
         </article>
       </section>
+
     </section>
   </main>
 
-  <footer><span class="footer-logo">7K.SOCIAL</span><span>FEITO PARA CONECTAR</span><span>© 2026</span></footer>
+  <footer>
+    <span class="footer-logo">7K.SOCIAL</span>
+    <span>FEITO PARA A COMUNIDADE GAMER</span>
+    <span>© 2026</span>
+  </footer>
+
 </body>
 </html>
